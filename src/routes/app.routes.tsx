@@ -1,11 +1,13 @@
 import { CodeEditor } from "../screens/codeEditor/CodeEditor";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomTabBarProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Feed } from "../screens/feed/Feed";
 import { ChatRoutes } from "./chat.routes";
 import { Chat } from "../screens/chat/Chat";
 import { theme } from '../../theme'
-import { background } from "native-base/lib/typescript/theme/styled-system";
+
+import { MyTabBar } from '../components/AppTabBar'
+import { color } from "native-base/lib/typescript/theme/styled-system";
 
 function TabRoutes() {
 
@@ -13,7 +15,14 @@ function TabRoutes() {
 
   return (
     <Navigator
+      tabBar={(props: BottomTabBarProps) => <MyTabBar {...props} />}
       initialRouteName="chat"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: theme.colors.primary[800],
+        },
+        headerTintColor: theme.colors.primary[100]
+      }}
     >
       <Screen
         name='feed'
@@ -30,7 +39,7 @@ function TabRoutes() {
         name='codeEditor'
         component={CodeEditor}
       />
-    </Navigator>
+    </Navigator >
   )
 }
 
@@ -43,6 +52,10 @@ export function AppRoutes() {
     <Navigator
       screenOptions={{
         animation: 'fade_from_bottom',
+        headerStyle: {
+          backgroundColor: theme.colors.primary[800],
+        },
+        headerTintColor: theme.colors.primary[100]
       }}
     >
       <Screen

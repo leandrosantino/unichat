@@ -2,17 +2,10 @@ import { extendTheme, Theme } from "native-base";
 
 export const theme = extendTheme({
 
-  components: {
-    Button: {
-      defaultProps: {
-        colorScheme: 'red',
-        _pressed: { bg: 'primary.700' },
-      },
-    },
-  },
-
   sizes: {
+    14: 56,
     15: 60,
+    19: 76,
     22: 88,
   },
 
