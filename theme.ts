@@ -4,17 +4,16 @@ export const theme = extendTheme({
 
   components: {
     Button: {
-      // Can simply pass default props to change default behaviour of components.
-      baseStyle: {
-
-      },
       defaultProps: {
         colorScheme: 'red',
         _pressed: { bg: 'primary.700' },
-
-
       },
     },
+  },
+
+  sizes: {
+    15: 60,
+    22: 88,
   },
 
   colors: {
@@ -27,7 +26,7 @@ export const theme = extendTheme({
       500: '#62528d',
       600: '#483c67',
       700: '#241e34',
-      800: '#120f1a',
+      800: '#191622',
       900: '#0F0D14',
     },
   }

@@ -18,9 +18,14 @@ export function ChatList() {
   const { navigate } = useNavigation()
 
   return (
-    <Box>
-      <Text>ChatList</Text>
+    <Box
+      bg={'primary.900'}
+      w={'full'}
+      h={'full'}
+    >
       <Button
+        variant={'ghost'}
+        w={'40'}
         colorScheme={'primary'}
         onPress={() => {
           navigate('contact')

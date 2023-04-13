@@ -1,8 +1,14 @@
 import React from 'react'
-import { Text } from 'native-base'
+import { Box, Text } from 'native-base'
 
 export default function Calls() {
   return (
-    <Text>Calls</Text>
+    <Box
+      bg={'primary.900'}
+      w={'full'}
+      h={'full'}
+    >
+      <Text>Calls</Text>
+    </Box>
   )
 }

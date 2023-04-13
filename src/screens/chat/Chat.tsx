@@ -1,8 +1,14 @@
 import React from 'react'
-import { Text } from 'native-base'
+import { Box, Text } from 'native-base'
 
 export function Chat() {
   return (
-    <Text>Chat</Text>
+    <Box
+      bg={'primary.900'}
+      w={'full'}
+      h={'full'}
+    >
+      <Text>Chat</Text>
+    </Box>
   )
 }
