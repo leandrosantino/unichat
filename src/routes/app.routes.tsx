@@ -8,6 +8,7 @@ import { theme } from '../../theme'
 
 import { MyTabBar } from '../components/AppTabBar'
 import { color } from "native-base/lib/typescript/theme/styled-system";
+import { Camera } from "../screens/camera/Camera";
 
 function TabRoutes() {
 
@@ -66,12 +67,15 @@ export function AppRoutes() {
         component={TabRoutes}
       />
 
-      <Group >
-        <Screen
-          name="contact"
-          component={Chat}
-        />
-      </Group>
+      <Screen
+        name="contact"
+        component={Chat}
+      />
+
+      <Screen
+        name="camera"
+        component={Camera}
+      />
 
     </Navigator>
   )

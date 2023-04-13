@@ -18,7 +18,7 @@ export function ChatRoutes() {
           tabBarPressColor: theme.colors.primary[700],
           tabBarIndicatorStyle: {
             backgroundColor: theme.colors.primary[500],
-            height: theme.sizes[1],
+            height: theme.sizes['0.5'],
           },
           tabBarItemStyle: {
             paddingTop: 0,

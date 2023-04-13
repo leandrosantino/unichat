@@ -2,6 +2,8 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import {
   Button,
+  IconButton,
+  Icon,
   HStack,
 } from 'native-base';
 import { theme } from "../../theme";
@@ -13,7 +15,8 @@ export function MyTabBar({ state, navigation }: BottomTabBarProps) {
       justifyContent={'center'}
       space={15}
       bg={'primary.800'}
-      h={14}
+      h={15}
+      pb={2}
     >
       {state.routes.map((route, index) => {
         const isFocused = state.index === index;
@@ -21,10 +24,6 @@ export function MyTabBar({ state, navigation }: BottomTabBarProps) {
         const color = isFocused ?
           theme.colors.primary[500] :
           theme.colors.primary[100]
-
-        const size = isFocused ?
-          theme.sizes[8] :
-          theme.sizes[7]
 
         const onPress = () => {
           const event = navigation.emit({
@@ -44,29 +43,29 @@ export function MyTabBar({ state, navigation }: BottomTabBarProps) {
         };
 
         return (
-          <Button
-            variant={'link'}
+          <IconButton
+            icon={
+              route.name === 'feed' ?
+                <Icon as={Ionicons} name='newspaper' /> :
+                route.name === 'chat' ?
+                  <Icon as={FontAwesome5} name='telegram-plane' /> :
+                  route.name === 'codeEditor' ?
+                    <Icon as={MaterialCommunityIcons} name='file-code-outline' /> :
+                    <></>
+            }
             key={route.key}
             onPress={onPress}
             onLongPress={onLongPress}
-            p={2}
-          >
-            {route.name === 'feed' ?
-              <Ionicons
-                name="newspaper"
-                size={size} color={color}
-              /> : route.name === 'chat' ?
-                <FontAwesome5
-                  name="telegram-plane"
-                  size={size} color={color}
-                /> : route.name === 'codeEditor' ?
-                  <MaterialCommunityIcons
-                    name="file-code-outline"
-                    size={size} color={color}
-                  /> : <></>}
-          </Button>
+            _icon={{ color, size: theme.sizes[2] }}
+            _pressed={{
+              bg: '',
+              _icon: {
+                color: 'primary.700',
+              }
+            }}
+          />
         );
       })}
-    </HStack>
+    </HStack >
   );
 }
