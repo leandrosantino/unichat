@@ -1,6 +1,28 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    // "baseUrl": ".",
+    // "rootDir": "./",
+    // "paths": {
+    //   "@screens/*": [
+    //     "screens/*"
+    //   ],
+    //   "@chat/*": [
+    //     "src/screens/chat/*"
+    //   ],
+    //   "@feed/*": [
+    //     "src/screens/feed/*"
+    //   ],
+    //   "@codeEditor/*": [
+    //     "src/screens/codeEditor/*"
+    //   ],
+    //   "@components/*": [
+    //     "src/components/*"
+    //   ],
+    //   "@routes/*": [
+    //     "src/routes/*"
+    //   ]
+    // }
   }
 }
