@@ -6,7 +6,9 @@ export const theme = extendTheme({
     14: 56,
     15: 60,
     19: 76,
+    21: 84,
     22: 88,
+
   },
 
   colors: {

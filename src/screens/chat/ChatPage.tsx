@@ -1,6 +1,6 @@
 import { Box, Text } from 'native-base'
 
-export function Chat() {
+export function ChatPage() {
   return (
     <Box
       bg={'primary.900'}

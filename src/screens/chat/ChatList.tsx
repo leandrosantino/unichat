@@ -28,7 +28,7 @@ export function ChatList() {
         w={'40'}
         colorScheme={'primary'}
         onPress={() => {
-          navigate('contact')
+          navigate('chatPage')
         }}
       >
         Open Chat

@@ -1,15 +1,16 @@
-import { HStack, Text, Icon, IconButton } from 'native-base'
+import { HStack, Text, Icon } from 'native-base'
 import { Feather, SimpleLineIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native'
+import { BottomTabHeaderProps } from '@react-navigation/bottom-tabs';
+import { AppIconButton } from '../../../components/AppIconButton';
 
-export function ChatListHeader() {
-  const { navigate } = useNavigation()
+export function ChatListHeader({ navigation }: BottomTabHeaderProps) {
+  const { navigate } = navigation
 
   return (
     <HStack
       bg={'primary.800'} alignItems={'center'}
       justifyContent={'space-between'}
-      pt={'7'} px={'4'} w={'full'} h={'22'}
+      pt={'7'} px={'4'} w={'full'} h={'24'}
     >
       <Text
         color={'primary.50'}
@@ -19,34 +20,17 @@ export function ChatListHeader() {
       <HStack
         space={3}
       >
-        <IconButton
+        <AppIconButton
           icon={<Icon as={Feather} name="camera" />}
-          color={'primary.100'}
-          p={3}
-          rounded={'full'}
-          _icon={{ color: "primary.100", }}
-          _pressed={{ _icon: { color: 'primary.600' }, }}
           onPress={() => {
             navigate('camera')
           }}
         />
-
-        <IconButton
-          color={'primary.100'}
+        <AppIconButton
           icon={<Icon as={Feather} name="search" />}
-          p={3}
-          rounded={'full'}
-          _icon={{ color: "primary.100", }}
-          _pressed={{ _icon: { color: 'primary.600' }, }}
         />
-
-        <IconButton
-          color={'primary.100'}
+        <AppIconButton
           icon={<Icon as={SimpleLineIcons} name="options-vertical" />}
-          p={3}
-          rounded={'full'}
-          _icon={{ color: "primary.100", }}
-          _pressed={{ _icon: { color: 'primary.600' }, }}
         />
       </HStack>
     </HStack >

@@ -1,7 +1,7 @@
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
-      contact: undefined,
+      chatPage: undefined,
       camera: undefined
     }
   }

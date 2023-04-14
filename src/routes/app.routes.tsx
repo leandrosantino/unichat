@@ -1,14 +1,14 @@
 import { CodeEditor } from "../screens/codeEditor/CodeEditor";
-import { BottomTabBarProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomTabBarProps, BottomTabHeaderProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Feed } from "../screens/feed/Feed";
 import { ChatRoutes } from "./chat.routes";
-import { Chat } from "../screens/chat/Chat";
+import { ChatPage } from "../screens/chat/ChatPage";
 import { theme } from '../../theme'
-
 import { MyTabBar } from '../components/AppTabBar'
-import { color } from "native-base/lib/typescript/theme/styled-system";
 import { Camera } from "../screens/camera/Camera";
+import { ChatListHeader } from "../screens/chat/components/ChatListHeader";
+import { ChatPageHeader } from "../screens/chat/components/ChatPageHeader";
 
 function TabRoutes() {
 
@@ -33,7 +33,8 @@ function TabRoutes() {
         name='chat'
         component={ChatRoutes}
         options={{
-          headerShown: false,
+          // headerShown: false,
+          header: (props: BottomTabHeaderProps) => (<ChatListHeader {...props} />),
         }}
       />
       <Screen
@@ -43,8 +44,6 @@ function TabRoutes() {
     </Navigator >
   )
 }
-
-
 
 export function AppRoutes() {
   const { Screen, Navigator, Group } = createNativeStackNavigator();
@@ -68,8 +67,11 @@ export function AppRoutes() {
       />
 
       <Screen
-        name="contact"
-        component={Chat}
+        name="chatPage"
+        component={ChatPage}
+        options={{
+          header: (props) => (<ChatPageHeader {...props} />)
+        }}
       />
 
       <Screen
